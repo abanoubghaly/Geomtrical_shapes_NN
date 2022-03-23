@@ -51,14 +51,14 @@ while(True):
         continue
 
     if 1 in np.round(prediction[0]):
-        print(categories[list(np.round(prediction[0])).index(1)])
+        print("\n" + categories[list(np.round(prediction[0])).index(1)])
         fig = plt.figure(figsize=(10,7.5))
         gs = fig.add_gridspec(1, 1)
-        num_image = 0
         ax = fig.add_subplot(gs[0, 0])
         ax.axis('off')
-        print("\n" + categories[list(np.round(prediction[0])).index(1)])
-        ax.set_title("Predicted: " + categories[list(np.round(prediction[num_image])).index(1)])
+        ax.set_title("Predicted: " + categories[list(np.round(prediction[0])).index(1)])
         ax.imshow(img)
+        fig.suptitle("Geomtric shapes", fontsize=25, x=0.42)
+        plt.show(block=True)
     else:
         print("No shape could be identified")
